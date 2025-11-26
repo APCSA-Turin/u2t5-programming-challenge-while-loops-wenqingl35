@@ -31,7 +31,20 @@ public class WhileLoops {
     */
    public static int countEvensUpTo(int n) {
        // YOUR CODE HERE
-       return -1;
+       if (n < 1) {
+        return 0;
+       }
+       if (n == 1) {
+        return 0;
+       }
+       int count = 0, intnum = 0;
+       while (count < n) {
+        count++;
+        if (count % 2 == 0) {
+            intnum++; 
+        }
+       }
+       return intnum;
    }
 
 
@@ -48,7 +61,12 @@ public class WhileLoops {
     */
    public static int digitSum(int n) {
        // YOUR CODE HERE
-       return -1;
+       int num = 0;
+       while (n > 0) {
+        num = num + (n % 10);
+        n = n/10;
+       }
+       return num;
    }
 
 
@@ -73,7 +91,21 @@ public class WhileLoops {
     */
    public static int countDownBy(int start, int step) {
        // YOUR CODE HERE
-       return -1;
+       int start2 = start+step;
+       if (start < step) {
+        return start;
+       }
+       if (start == 0) {
+        return 0;
+       }
+       if (step <= 0) {
+        return start;
+       }
+       while (start >= 0) {
+        start2 = start2 - step;
+        start = start - step;
+       }
+       return start2;
    }
 
 
@@ -106,7 +138,12 @@ public class WhileLoops {
     */
    public static int weeksToReachGoal(int startBalance, int weeklyDeposit, int goalBalance) {
        // CODE HERE
-       return -1;
+       int count = 0;
+       while (startBalance < goalBalance) {
+        count++;
+        startBalance += weeklyDeposit;
+       }
+       return count;
    }
 
 
@@ -141,7 +178,21 @@ public class WhileLoops {
     */
    public static int minutesUntilDead(int startPercent, int perMinuteUse) {
        //YOUR CODE HERE
-       return -1;
+       int count = 0;
+       if (perMinuteUse == 0) {
+        return 0;
+       }
+       if (startPercent < 0) {
+        return 0;
+       }
+       if (perMinuteUse < 0) {
+        return 0;
+       }
+       while (startPercent > 0) {
+        startPercent = startPercent - perMinuteUse;
+        count++;
+       }
+       return count;
    }
 }
 
